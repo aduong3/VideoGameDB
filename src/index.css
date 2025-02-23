@@ -10,14 +10,54 @@
 .app {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(49, 49, 49);
 }
 .header {
   color: white;
-  background-color: rgb(58, 58, 58);
-  padding: 32px;
+  background-color: rgb(61, 61, 61);
+  padding: 18px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.295);
 }
 .logo {
   letter-spacing: 1px;
   font-weight: 700;
+  font-size: 1.6rem;
+  margin-left: 32px;
+}
+.search {
+  background-color: rgb(49, 49, 49);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+}
+.search:focus {
+  transform: translateY(-3px);
+  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.322);
+  border: none;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.main {
+  padding: 48px;
+}
+
+.games-list {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 500px);
+  justify-content: center;
+}
+
+.game-name {
+  font-size: 1.4rem;
+}
+.game-picture {
+  width: 225px;
+  height: 200px;
+  object-fit: cover;
 }

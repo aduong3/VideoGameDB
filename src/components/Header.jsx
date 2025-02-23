@@ -1,9 +1,10 @@
-export default function Header() {
+import { Logo } from "./Logo";
+import { Search } from "./Search";
+
+export default function Header({ children }) {
   return (
     <>
-      <header className="header">
-        <p className="logo">VideoGameDB</p>
-      </header>
+      <header className="header">{children}</header>
     </>
   );
 }
