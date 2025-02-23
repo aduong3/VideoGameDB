@@ -15,7 +15,7 @@ export function useFetch(query) {
         try {
           setIsLoading(true);
           const response = await fetch(
-            `https://api.rawg.io/api/games?key=${API_KEY}&search=${query}`,
+            `https://api.rawg.io/api/games?key=${API_KEY}&search=${query}&search_precise=true`,
             { signal: controller.signal }
           );
           if (!response.ok) {

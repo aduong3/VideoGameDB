@@ -22,7 +22,8 @@ function App() {
           <Search setQuery={setQuery} query={query} />
         </Header>
         <Main>
-          <VideoGamesList games={games} />
+          {!query && <p>Test</p>}
+          {query && <VideoGamesList games={games} />}
         </Main>
       </div>
     </>

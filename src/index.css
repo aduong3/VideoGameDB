@@ -8,10 +8,9 @@
 }
 
 .app {
-  width: 100vw;
-  height: 100vh;
   background-color: rgb(49, 49, 49);
 }
+
 .header {
   color: white;
   background-color: rgb(61, 61, 61);
@@ -49,15 +48,46 @@
 .games-list {
   color: white;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 500px);
-  justify-content: center;
-}
+  grid-template-columns: repeat(auto-fit, 1fr);
 
-.game-name {
-  font-size: 1.4rem;
+  list-style: none;
+  justify-content: center;
+  gap: 4px;
 }
 .game-picture {
-  width: 225px;
-  height: 200px;
+  width: 150px;
   object-fit: cover;
+}
+
+.games-list li {
+  display: grid;
+  grid-template-columns: 150px 1fr 40px;
+  grid-template-rows: 90px;
+  background-color: rgb(41, 41, 41);
+}
+.game-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+}
+.genre-list {
+  display: flex;
+  gap: 6px;
+}
+.genre {
+  font-size: 0.9rem;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.068);
+  padding: 2px;
+  border-radius: 2px;
+}
+.rating {
+  align-self: center;
+  text-align: center;
 }
