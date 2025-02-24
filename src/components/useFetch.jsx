@@ -23,9 +23,11 @@ export function useFetch(query) {
           }
           const data = await response.json();
           console.log(data.results);
+          setIsLoading(false);
           setGames(data.results);
         } catch (err) {
           console.log(err.message);
+          setError(err.message);
         }
       }
       if (query.length < 4) {

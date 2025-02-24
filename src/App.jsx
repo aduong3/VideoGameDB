@@ -11,8 +11,28 @@ const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 
 function App() {
   const [query, setQuery] = useState("");
+  const [defaultGames, setDefaultGames] = useState([]);
 
   const { isLoading, error, games } = useFetch(query);
+
+  useEffect(function () {
+    async function fetchDefaultGames() {
+      try {
+        const response = await fetch(
+          `https://api.rawg.io/api/games?key=${API_KEY}&metacritic=90,100&platforms=1`
+        );
+        if (!response.ok) {
+          throw new Error("cannot fetch data");
+        }
+        const data = await response.json();
+        console.log(data);
+        setDefaultGames(data.results);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    fetchDefaultGames();
+  }, []);
 
   return (
     <>
@@ -22,7 +42,7 @@ function App() {
           <Search setQuery={setQuery} query={query} />
         </Header>
         <Main>
-          {!query && <p>Test</p>}
+          {!query && <VideoGamesList games={defaultGames} />}
           {query && <VideoGamesList games={games} />}
         </Main>
       </div>

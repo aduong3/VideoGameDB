@@ -6,6 +6,11 @@
   box-sizing: border-box;
   font-family: "Montserrat", system-ui, Arial, Helvetica, sans-serif;
 }
+html,
+body,
+.app {
+  min-height: 100vh;
+}
 
 .app {
   background-color: rgb(49, 49, 49);
@@ -76,7 +81,8 @@
   justify-content: space-between;
   padding: 8px;
 }
-.genre-list {
+.genre-list,
+.platform-list {
   display: flex;
   gap: 6px;
 }
@@ -90,4 +96,16 @@
 .rating {
   align-self: center;
   text-align: center;
+}
+.platform {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.no-image {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: 1.4rem;
 }
